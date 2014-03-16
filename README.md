@@ -1,10 +1,10 @@
 gory.github.io
 ==============
 
-:two_men_holding_hands::two_men_holding_hands::two_men_holding_hands::two_men_holding_hands::two_men_holding_hands::two_men_holding_hands::two_men_holding_hands::two_men_holding_hands::two_men_holding_hands::two_men_holding_hands::two_men_holding_hands::two_men_holding_hands::two_men_holding_hands::two_men_holding_hands::two_men_holding_hands::two_men_holding_hands::two_men_holding_hands::two_men_holding_hands::two_men_holding_hands::two_men_holding_hands::two_men_holding_hands:
+:two_men_holding_hands::two_men_holding_hands::two_men_holding_hands::two_men_holding_hands::two_men_holding_hands::two_men_holding_hands::two_men_holding_hands::two_men_holding_hands::two_men_holding_hands::two_men_holding_hands::two_men_holding_hands::two_men_holding_hands::two_men_holding_hands::two_men_holding_hands::two_men_holding_hands::two_men_holding_hands::two_men_holding_hands::two_men_holding_hands::two_men_holding_hands::two_men_holding_hands::two_men_holding_hands::two_men_holding_hands::two_men_holding_hands::two_men_holding_hands::two_men_holding_hands::two_men_holding_hands::two_men_holding_hands::two_men_holding_hands::two_men_holding_hands::two_men_holding_hands::two_men_holding_hands::two_men_holding_hands::two_men_holding_hands::two_men_holding_hands::two_men_holding_hands::two_men_holding_hands::two_men_holding_hands::two_men_holding_hands::two_men_holding_hands::two_men_holding_hands::two_men_holding_hands::two_men_holding_hands:
 
 
-<!--
+```
      ___            ___            ___            ___
     /\  \          /\  \          /\  \          /\__\
    /::\  \        /::\  \        /::\  \        /:/  /
@@ -16,5 +16,4 @@ gory.github.io
   \:\/:/  /      \:\/:/  /        |:|  |       \:\/:/  /
    \::/  /        \::/  /         |:|  |        \::/  /
     \/__/          \/__/          \/__/          \/__/
--->
-
+```
