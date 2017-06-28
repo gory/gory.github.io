@@ -1,0 +1,148 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after {
+  content: '';
+  content: none; }
+
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+html {
+  background-color: #000; }
+
+html, body, main {
+  height: 100%;
+  width: 100%; }
+
+.section-hero {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-perspective: 1000px;
+          perspective: 1000px; }
+
+.section {
+  height: 100%;
+  width: 100%; }
+
+.section-hero {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+          transform: translate3d(-50%, -50%, 0); }
+  .section-hero .cube {
+    -webkit-transform: rotateX(0) rotateY(0) translateZ(0);
+            transform: rotateX(0) rotateY(0) translateZ(0);
+    -webkit-transform-origin: 500px 500px -500px;
+            transform-origin: 500px 500px -500px;
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+    position: relative;
+    width: 1000px;
+    height: 1000px; }
+    .section-hero .cube .div {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -ms-flex-line-pack: center;
+          align-content: center;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1000px;
+      height: 1000px;
+      opacity: 0.75; }
+      .section-hero .cube .div:nth-child(1) {
+        background: red;
+        -webkit-transform-origin: center top;
+                transform-origin: center top;
+        -webkit-transform: rotateX(90deg) translateY(-1000px);
+                transform: rotateX(90deg) translateY(-1000px); }
+      .section-hero .cube .div:nth-child(2) {
+        background: orange;
+        -webkit-transform-origin: center bottom;
+                transform-origin: center bottom;
+        -webkit-transform: rotateX(-90deg) translateY(1000px);
+                transform: rotateX(-90deg) translateY(1000px); }
+      .section-hero .cube .div:nth-child(3) {
+        background: yellow;
+        -webkit-transform-origin: left center;
+                transform-origin: left center;
+        -webkit-transform: rotateY(-90deg) translateX(-1000px);
+                transform: rotateY(-90deg) translateX(-1000px); }
+      .section-hero .cube .div:nth-child(4) {
+        background: green;
+        -webkit-transform-origin: right center;
+                transform-origin: right center;
+        -webkit-transform: rotateY(90deg) translateX(1000px);
+                transform: rotateY(90deg) translateX(1000px); }
+      .section-hero .cube .div:nth-child(5) {
+        background: blue;
+        -webkit-transform-origin: center center;
+                transform-origin: center center;
+        -webkit-transform: rotateX(0);
+                transform: rotateX(0); }
+      .section-hero .cube .div:nth-child(6) {
+        background: purple;
+        -webkit-transform-origin: center center;
+                transform-origin: center center;
+        -webkit-transform: rotateY(180deg) translateZ(1000px);
+                transform: rotateY(180deg) translateZ(1000px); }
+
+.section-one {
+  background-color: red; }
+
+.section-two {
+  background-color: orange; }
+
+.section-three {
+  background-color: yellow; }
+
+.section-four {
+  background-color: green; }
+
+.section-five {
+  background-color: blue; }

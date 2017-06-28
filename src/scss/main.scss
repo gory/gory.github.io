@@ -1,5 +1,8 @@
 @import "reset";
-
-html {
-	background-color: #000;
-}
+@import "base";
+@import "hero";
+@import "sections/one";
+@import "sections/two";
+@import "sections/three";
+@import "sections/four";
+@import "sections/five";

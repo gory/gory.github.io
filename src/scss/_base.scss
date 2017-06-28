@@ -1,0 +1,23 @@
+html {
+	background-color: #000;
+}
+
+html, body, main {
+	height: 100%;
+	width: 100%;
+}
+
+.section-hero {
+	display: flex;
+	align-items: center;
+	align-content: center;
+	justify-content: center;
+	perspective: 1000px;
+}
+
+.section {
+	height: 100%;
+	width: 100%;
+}
+
+

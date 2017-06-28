@@ -1,0 +1,62 @@
+$length: 1000px;
+
+.section-hero {
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	transform: translate3d(-50%, -50%, 0);
+	.cube {
+		transform: rotateX(0) rotateY(0) translateZ(0);
+		transform-origin: $length/2 $length/2 #{-($length/2)};
+		transform-style: preserve-3d;
+		position: relative;
+		width: $length;
+		height: $length;
+
+		.div {
+			display: flex;
+			align-items: center;
+			align-content: center;
+			justify-content: center;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: $length;
+			height: $length;
+			opacity: 0.75;
+
+			&:nth-child(1) {
+				background: red;
+				transform-origin: center top;
+				transform: rotateX(90deg) translateY(#{-($length)});
+			}
+			&:nth-child(2) {
+				background: orange;
+				transform-origin: center bottom;
+				transform: rotateX(-90deg) translateY($length);
+			}
+			&:nth-child(3) {
+				background: yellow;
+				transform-origin: left center;
+				transform: rotateY(-90deg) translateX(#{-($length)});
+			}
+			&:nth-child(4) {
+				background: green;
+				transform-origin: right center;
+				transform: rotateY(90deg) translateX($length);
+			}
+			// front
+			&:nth-child(5) {
+				background: blue;
+				transform-origin: center center;
+				transform: rotateX(0);
+			}
+			// back
+			&:nth-child(6) {
+				background: purple;
+				transform-origin: center center;
+				transform: rotateY(180deg) translateZ($length);
+			}
+		}
+	}
+}
