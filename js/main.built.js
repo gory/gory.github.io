@@ -9,10 +9,14 @@ class Page {
 		this.clones = element.querySelectorAll(CLONE);
 		this.disableScroll = false;
 		this.scrollHeight = 0;
+		this.scrollPosition = 0;
 		this.clonesHeight = 0;
-		this.i = 0;
 
-		console.log(this.getClonesHeight());
+		let boundRecalc = this.reCalculate.bind(this);
+
+		window.requestAnimationFrame(boundRecalc);
+
+		this.context.addEventListener('scroll', this.rafScrollUpdate.bind(this));
 	}
 
 	getScrollPosition() {
@@ -32,6 +36,42 @@ class Page {
 
 		return clonesHeight;
 	}
+
+	reCalculate() {
+		this.scrollPosition = this.getScrollPosition();
+		this.scrollHeight = this.context.scrollHeight;
+		this.clonesHeight = this.getClonesHeight();
+
+		if (this.scrollPosition <= 1) {
+			this.setScrollPosition(1);
+		}
+	}
+
+	stopScroll() {
+		this.disableScroll = false;
+	}
+
+	scrollUpdate() {
+		if (!this.disableScroll) {
+			this.scrollPosition = this.getScrollPosition();
+			if (this.clonesHeight + this.scrollPosition >= this.scrollHeight) {
+				this.setScrollPosition(1)
+				this.disableScroll = true;
+			} else if (this.scrollPosition <= 0) {
+				this.setScrollPosition(this.scrollHeight - this.clonesHeight);
+				this.disableScroll = true;
+			}
+		}
+
+		if(this.disableScroll) {
+			window.setTimeout(this.stopScroll.bind(this), 40);
+		}
+	}
+
+	rafScrollUpdate() {
+		let boundScrollUpdate = this.scrollUpdate.bind(this);
+		window.requestAnimationFrame(boundScrollUpdate);
+	}
 }
 
 module.exports = Page;
@@ -44,7 +84,6 @@ let Page = require('./Page/Page.js');
 let Main = (function() {
 	return {
 		initialize: function() {
-			console.log('hi');
 			this.setupScroll();
 		},
 		setupScroll: function() {

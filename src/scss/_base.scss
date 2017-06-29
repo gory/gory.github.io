@@ -7,6 +7,15 @@ html, body, main {
 	width: 100%;
 }
 
+body {
+	overflow: hidden;
+}
+
+main {
+	overflow: auto;
+	position: relative;
+}
+
 .section-hero {
 	display: flex;
 	align-items: center;
@@ -16,6 +25,7 @@ html, body, main {
 }
 
 .section {
+	position: relative;
 	height: 100%;
 	width: 100%;
 }

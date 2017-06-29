@@ -42,6 +42,13 @@ html, body, main {
   height: 100%;
   width: 100%; }
 
+body {
+  overflow: hidden; }
+
+main {
+  overflow: auto;
+  position: relative; }
+
 .section-hero {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -58,6 +65,7 @@ html, body, main {
           perspective: 1000px; }
 
 .section {
+  position: relative;
   height: 100%;
   width: 100%; }
 
