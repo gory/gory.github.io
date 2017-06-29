@@ -141,16 +141,16 @@ main {
                 transform: rotateY(180deg) translateZ(1000px); }
 
 .section-one {
-  background-color: red; }
+  background-color: #fff; }
 
 .section-two {
-  background-color: orange; }
+  background-color: #ccc; }
 
 .section-three {
-  background-color: yellow; }
+  background-color: #888; }
 
 .section-four {
-  background-color: green; }
+  background-color: #444; }
 
 .section-five {
-  background-color: blue; }
+  background-color: #000; }
