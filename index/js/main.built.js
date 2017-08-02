@@ -4009,11 +4009,14 @@ module.exports = {
 'use strict';
 
 const CLONE = '[data-clone]';
+const INFINITE = '[data-infinite]';
 
 class Page {
 	constructor(element) {
 		this.context = element;
-		this.clones = element.querySelectorAll(CLONE);
+		this.clones = Array.from(element.querySelectorAll(CLONE));
+		this.infinites = Array.from(element.querySelectorAll(INFINITE));
+
 		this.disableScroll = false;
 		this.scrollHeight = 0;
 		this.scrollPosition = 0;
@@ -4048,6 +4051,7 @@ class Page {
 		this.scrollPosition = this.getScrollPosition();
 		this.scrollHeight = this.context.scrollHeight;
 		this.clonesHeight = this.getClonesHeight();
+
 
 		if (this.scrollPosition <= 1) {
 			this.setScrollPosition(1);
@@ -4092,10 +4096,10 @@ let Page = require('./Page/Page.js');
 let Main = (function() {
 	return {
 		initialize: function() {
-			this.setupScroll();
 			this.gui = new dat.GUI();
+			this.setupPage();
 		},
-		setupScroll: function() {
+		setupPage: function() {
 			this.myPage = new Page(document.getElementById('main'));
 		}
 	}

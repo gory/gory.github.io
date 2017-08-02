@@ -6,10 +6,10 @@ let Page = require('./Page/Page.js');
 let Main = (function() {
 	return {
 		initialize: function() {
-			this.setupScroll();
 			this.gui = new dat.GUI();
+			this.setupPage();
 		},
-		setupScroll: function() {
+		setupPage: function() {
 			this.myPage = new Page(document.getElementById('main'));
 		}
 	}
