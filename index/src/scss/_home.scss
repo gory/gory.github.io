@@ -1,0 +1,45 @@
+$bg1: #000;
+$bg2: #444;
+$bg3: #888;
+$bg4: #bbb;
+$bg5: #fff;
+
+.section-one {
+	background-color: $bg1;
+	background: linear-gradient($bg1, $bg2);
+}
+
+.section-two {
+	background-color: $bg2;
+	background: linear-gradient($bg2, $bg3);
+}
+
+.section-three {
+	background-color: $bg3;
+	background: linear-gradient($bg3, $bg4);
+}
+
+.section-four {
+	background-color: $bg4;
+	background: linear-gradient($bg4, $bg5);
+}
+
+.section-five {
+	background-color: $bg5;
+	background: linear-gradient($bg5, $bg4);
+}
+
+.section-six {
+	background-color: $bg4;
+	background: linear-gradient($bg4, $bg3);
+}
+
+.section-seven {
+	background-color: $bg3;
+	background: linear-gradient($bg3, $bg2);
+}
+
+.section-eight {
+	background-color: $bg2;
+	background: linear-gradient($bg2, $bg1);
+}

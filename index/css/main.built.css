@@ -154,3 +154,43 @@ main {
 
 .section-five {
   background-color: #000; }
+
+.section-one {
+  background-color: #000;
+  background: -webkit-gradient(linear, left top, left bottom, from(#000), to(#444));
+  background: linear-gradient(#000, #444); }
+
+.section-two {
+  background-color: #444;
+  background: -webkit-gradient(linear, left top, left bottom, from(#444), to(#888));
+  background: linear-gradient(#444, #888); }
+
+.section-three {
+  background-color: #888;
+  background: -webkit-gradient(linear, left top, left bottom, from(#888), to(#bbb));
+  background: linear-gradient(#888, #bbb); }
+
+.section-four {
+  background-color: #bbb;
+  background: -webkit-gradient(linear, left top, left bottom, from(#bbb), to(#fff));
+  background: linear-gradient(#bbb, #fff); }
+
+.section-five {
+  background-color: #fff;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#bbb));
+  background: linear-gradient(#fff, #bbb); }
+
+.section-six {
+  background-color: #bbb;
+  background: -webkit-gradient(linear, left top, left bottom, from(#bbb), to(#888));
+  background: linear-gradient(#bbb, #888); }
+
+.section-seven {
+  background-color: #888;
+  background: -webkit-gradient(linear, left top, left bottom, from(#888), to(#444));
+  background: linear-gradient(#888, #444); }
+
+.section-eight {
+  background-color: #444;
+  background: -webkit-gradient(linear, left top, left bottom, from(#444), to(#000));
+  background: linear-gradient(#444, #000); }
