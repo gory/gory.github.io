@@ -4010,6 +4010,11 @@ module.exports = {
 
 const CLONE = '[data-clone]';
 const INFINITE = '[data-infinite]';
+const EXCLUDES = [
+	'data-hero'
+]
+
+let SectionManager = require('./SectionManager');
 
 class Page {
 	constructor(element) {
@@ -4018,12 +4023,13 @@ class Page {
 		this.infinites = Array.from(element.querySelectorAll(INFINITE));
 
 		this.disableScroll = false;
-		this.scrollHeight = 0;
+		this.scrollHeight = document.body.scrollHeight;
 		this.scrollPosition = 0;
 		this.clonesHeight = 0;
 
-		let boundRecalc = this.reCalculate.bind(this);
+		this.manager = new SectionManager(element, EXCLUDES, this.scrollPosition);
 
+		let boundRecalc = this.reCalculate.bind(this);
 		window.requestAnimationFrame(boundRecalc);
 
 		this.context.addEventListener('scroll', this.rafScrollUpdate.bind(this));
@@ -4077,6 +4083,8 @@ class Page {
 		if(this.disableScroll) {
 			window.setTimeout(this.stopScroll.bind(this), 40);
 		}
+
+		this.manager.scrollUpdate(this.scrollPosition);
 	}
 
 	rafScrollUpdate() {
@@ -4087,7 +4095,93 @@ class Page {
 
 module.exports = Page;
 
-},{}],24:[function(require,module,exports){
+},{"./SectionManager":25}],24:[function(require,module,exports){
+'use strict';
+
+
+class Section {
+	constructor(element) {
+		this.element = element;
+		this.offset = this.element.offsetTop;
+		this.h = this.element.clientHeight;
+	}
+
+	scrollUpdate(position) {
+		if ( (position > this.offset) && (position < (this.offset + this.h) ) ) {
+			this.activePosition(position);
+		} else {
+			this.notActive();
+		}
+	}
+
+	activePosition(position) {
+		let max = this.h;
+		let place = position - this.offset;
+
+		let percent = place / max;
+		console.log(percent);
+	}
+
+	notActive() {
+		//
+	}
+}
+
+module.exports = Section;
+},{}],25:[function(require,module,exports){
+'use strict';
+
+let Section = require('./Section');
+
+class SectionManager {
+	constructor(element, excludes, scrollPosition) {
+
+		this.element = element;
+		this.scrollPosition = scrollPosition;
+		this.excludes = excludes;
+		this.sections = [];
+
+		this.setup();
+
+	}
+
+	setup() {
+		let sectionsNL = this.element.querySelectorAll('section');
+		let sections = Array.prototype.slice.call(sectionsNL)
+		let sl = sections.length;
+
+		for (let i=0; i < sl;  i++) {
+			let mySection = sections[i];
+			for (let myAttribute of this.excludes) {
+				if ( mySection.attributes.hasOwnProperty(myAttribute) ) {
+					sections.splice(i, 1);
+				}
+			}
+		}
+
+		sl = sections.length;
+		for (let i=0; i < sl;  i++) {
+			let mySection = sections[i];
+			let newSection = new Section(mySection);
+			this.sections.push(newSection);
+		}
+	}
+
+	refresh(position) {
+		this.scrollPosition = position;
+	}
+
+	scrollUpdate(position) {
+		this.refresh(position);
+		for (let mySection of this.sections) {
+			mySection.scrollUpdate(position);
+		}
+
+	}
+}
+
+module.exports = SectionManager;
+},{"./Section":24}],26:[function(require,module,exports){
 'use strict';
 
 let dat = require('exdat');
@@ -4107,4 +4201,4 @@ let Main = (function() {
 }());
 
 module.exports = Main.initialize();
-},{"./Page/Page.js":23,"exdat":22}]},{},[24])
+},{"./Page/Page.js":23,"exdat":22}]},{},[26])

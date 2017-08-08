@@ -2,6 +2,11 @@
 
 const CLONE = '[data-clone]';
 const INFINITE = '[data-infinite]';
+const EXCLUDES = [
+	'data-hero'
+]
+
+let SectionManager = require('./SectionManager');
 
 class Page {
 	constructor(element) {
@@ -10,12 +15,13 @@ class Page {
 		this.infinites = Array.from(element.querySelectorAll(INFINITE));
 
 		this.disableScroll = false;
-		this.scrollHeight = 0;
+		this.scrollHeight = document.body.scrollHeight;
 		this.scrollPosition = 0;
 		this.clonesHeight = 0;
 
-		let boundRecalc = this.reCalculate.bind(this);
+		this.manager = new SectionManager(element, EXCLUDES, this.scrollPosition);
 
+		let boundRecalc = this.reCalculate.bind(this);
 		window.requestAnimationFrame(boundRecalc);
 
 		this.context.addEventListener('scroll', this.rafScrollUpdate.bind(this));
@@ -69,6 +75,8 @@ class Page {
 		if(this.disableScroll) {
 			window.setTimeout(this.stopScroll.bind(this), 40);
 		}
+
+		this.manager.scrollUpdate(this.scrollPosition);
 	}
 
 	rafScrollUpdate() {
