@@ -8,6 +8,23 @@ import postcss from 'gulp-postcss';
 import autoprefixer from 'autoprefixer';
 import concat from 'gulp-concat';
 import sass from 'gulp-sass';
+import handlebars from 'handlebars';
+import gulpCompileHandlebars from 'gulp-handlebars-html';
+let gulpHandlebars = gulpCompileHandlebars(handlebars);
+import templateData from './src/data.json';
+
+gulp.task('html', () => {
+
+	let options = {
+		partialsDirectory : ['./src/hbs/partials'],
+		allowedExtensions  : ['handlebars', 'hbs', 'hb', 'html']
+	}
+
+	return gulp.src('src/hbs/index.hbs')
+		.pipe(gulpHandlebars(templateData, options))
+		.pipe(rename('index.html'))
+		.pipe(gulp.dest('../'));
+});
 
 gulp.task('css', () => {
 	gulp.src(['src/scss/main.scss'])
@@ -53,6 +70,7 @@ gulp.task('head', () => {
 gulp.task('default', () => {
 	gulp.watch("src/scss/**/*.scss", ['css']);
 	gulp.watch("src/js/**/*.js", ['js', 'head']);
+	gulp.watch("src/hbs/**/*.hbs", ['html'])
 });
 
-gulp.task('all', ['css', 'js', 'head']);
+gulp.task('all', ['css', 'js', 'head', 'html']);

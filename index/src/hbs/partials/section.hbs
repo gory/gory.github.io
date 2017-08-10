@@ -1,0 +1,10 @@
+<section class="section {{name}}" {{#if clone}}id="clone-{{name}}" data-clone={{name}}{{else}}id="{{name}}" data-infinite{{/if}}>
+	<div class="content">
+		{{#title}}
+			<h2>{{this}}</h2>
+		{{/title}}
+		{{#copy}}
+			<p>{{this}}</p>
+		{{/copy}}
+	</div>
+</section>

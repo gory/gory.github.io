@@ -1,0 +1,40 @@
+{
+	"sections": {
+		"one": {
+			"name": "section-one",
+			"title": "Lorem Ipsum",
+			"copy": "something something"
+		},
+		"two": {
+			"name": "section-two"
+		},
+		"three": {
+			"name": "section-three"
+		},
+		"four": {
+			"name": "section-four"
+		},
+		"five": {
+			"name": "section-five"
+		},
+		"six": {
+			"name": "section-six"
+		},
+		"seven": {
+			"name": "section-seven"
+		},
+		"eight": {
+			"name": "section-eight"
+		},
+		"one-clone": {
+			"name": "section-one",
+			"clone": true,
+			"title": "Lorem Ipsum",
+			"copy": "something something"
+		},
+		"two-clone": {
+			"name": "section-two",
+			"clone": true
+		}
+	}
+}

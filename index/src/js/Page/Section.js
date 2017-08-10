@@ -21,12 +21,13 @@ class Section {
 		let place = position - this.offset;
 
 		let percent = place / max;
-		console.log(percent);
+
 	}
 
 	notActive() {
 		//
 	}
+
 }
 
 module.exports = Section;
